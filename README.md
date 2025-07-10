@@ -72,7 +72,7 @@ graph TD
 ## ⚡ Setup & Installation
 1. **Clone the repo:**
    ```sh
-   git clone https://github.com/<your-org>/ecommerce-microservice.git
+   git clone https://github.com/PraxisForge/ecommerce-microservice.git
    cd ecommerce-microservice
    ```
 2. **Start Kafka, RabbitMQ, Schema Registry:**
