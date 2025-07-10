@@ -1,0 +1,23 @@
+# Copilot: VirtualService for canary rollout on /api/products
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: product-service
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - ecommerce-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /api/products
+      route:
+        - destination:
+            host: product-service
+            subset: v1
+          weight: 90
+        - destination:
+            host: product-service
+            subset: v2
+          weight: 10

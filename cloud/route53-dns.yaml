@@ -1,0 +1,11 @@
+# Copilot: Route53 DNS record for api.ecommerce.com
+apiVersion: route53.aws.crossplane.io/v1alpha1
+kind: RecordSet
+metadata:
+  name: api-ecommerce-com
+spec:
+  name: api.ecommerce.com
+  type: A
+  alias:
+    name: dualstack.ecommerce-gwlb-xxxx.elb.amazonaws.com
+    zoneID: ZZZZZZZZZZZZZZ

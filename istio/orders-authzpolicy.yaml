@@ -1,0 +1,16 @@
+# Copilot: AuthorizationPolicy for /api/orders
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: orders-authenticated
+spec:
+  selector:
+    matchLabels:
+      app: order-service
+  rules:
+    - to:
+        - operation:
+            paths: ["/api/orders*"]
+      from:
+        - source:
+            requestPrincipals: ["*"]

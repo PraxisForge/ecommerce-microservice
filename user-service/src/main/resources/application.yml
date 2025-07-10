@@ -1,0 +1,43 @@
+spring:
+  zipkin:
+    base-url: http://zipkin:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/ecommerce
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: user-service
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+resilience4j:
+  circuitbreaker:
+    instances:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+  retry:
+    instances:
+      default:
+        maxAttempts: 3
+        waitDuration: 2s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

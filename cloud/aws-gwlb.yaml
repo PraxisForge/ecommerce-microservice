@@ -1,0 +1,14 @@
+# Copilot: Example AWS Gateway Load Balancer manifest
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: GatewayLoadBalancer
+metadata:
+  name: ecommerce-gwlb
+spec:
+  name: ecommerce-gwlb
+  scheme: internet-facing
+  listeners:
+    - port: 80
+      protocol: TCP
+      defaultAction:
+        type: forward
+        targetGroupARN: arn:aws:elasticloadbalancing:region:account-id:targetgroup/ecommerce-tg/1234567890abcdef

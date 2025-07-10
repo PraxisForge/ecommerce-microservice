@@ -1,0 +1,10 @@
+# Copilot: DestinationRule for cross-cluster product-service
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: product-service-global
+spec:
+  host: product-service.global
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

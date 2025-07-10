@@ -1,0 +1,18 @@
+# Copilot: ServiceEntry for cross-cluster product-service
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: product-service-global
+spec:
+  hosts:
+    - product-service.global
+  location: MESH_INTERNAL
+  ports:
+    - number: 8080
+      name: http
+      protocol: HTTP
+  resolution: DNS
+  endpoints:
+    - address: product-service.cluster-eu.svc.cluster.local
+  exportTo:
+    - "*"

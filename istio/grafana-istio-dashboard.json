@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "title": "Istio Service Mesh Overview",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Request Volume",
+        "targets": [
+          {
+            "expr": "istio_requests_total",
+            "legendFormat": "{{ destination_service }}",
+            "refId": "A"
+          }
+        ]
+      }
+    ]
+  }
+}
