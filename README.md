@@ -1,9 +1,5 @@
 # E-Commerce Microservices Platform
 
-[![Build Status](https://github.com/<your-org>/ecommerce-microservice/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/<your-org>/ecommerce-microservice/actions)
-[![Coverage Status](https://coveralls.io/repos/github/<your-org>/ecommerce-microservice/badge.svg?branch=main)](https://coveralls.io/github/<your-org>/ecommerce-microservice?branch=main)
-[![Docker Pulls](https://img.shields.io/docker/pulls/<your-dockerhub-username>/user-service)](https://hub.docker.com/r/<your-dockerhub-username>/user-service)
-
 ## 🚀 Elevator Pitch
 A production-grade, event-driven Java/Spring Boot e-commerce platform built with microservices, supporting distributed transactions, CQRS, service mesh, and global scale. Features include secure APIs, resilient patterns, real-time event flows (Kafka/RabbitMQ), observability, and automated CI/CD for cloud-native deployments.
 
